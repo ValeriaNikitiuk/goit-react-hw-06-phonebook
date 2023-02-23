@@ -1,0 +1,8 @@
+.listButton {
+    display: flex;
+    margin-top: 20px;
+    border-color: rgb(44, 44, 137);
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(215, 206, 255);
+}
