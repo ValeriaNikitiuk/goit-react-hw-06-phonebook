@@ -1,9 +1,9 @@
 import { addFilter } from 'components/redux/filterSlice';
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import s from './Filter.module.css';
 
-const Filter = ({ value, onChange }) => {
+const Filter = () => {
   const dispatch = useDispatch();
 
   const handleChange = e => {
@@ -11,6 +11,8 @@ const Filter = ({ value, onChange }) => {
     const name = e.target.value;
     dispatch(addFilter(name));
   };
+
+  
 
   return (
     <div>

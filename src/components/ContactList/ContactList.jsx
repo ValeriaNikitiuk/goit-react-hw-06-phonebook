@@ -8,13 +8,11 @@ import { ContactsRemove } from 'components/ContactsRemove/ContactsRemove';
 const ContactList = () => {
   const contactsData = useSelector(getContacts);
   const { input } = useSelector(getFilter);
-  const contacts = contactsData.data;
+  const contacts = contactsData;
 
   if (!contacts || !Array.isArray(contacts)) {
     return null;
   }
-
-
 
   const visibleContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(input.toLowerCase())

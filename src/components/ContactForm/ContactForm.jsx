@@ -15,13 +15,16 @@ const ContactForm = () => {
     const number = form.elements.number.value;
 
     form.reset();
-    if (
-      contacts.value &&
-      contacts.value.find(contact => contact.name === name)
-    ) {
+    
+    if (contacts && contacts.find(contact => contact.name === name)) {
       alert(`${name} this contact already exists`);
       return false;
     }
+    if (contacts && contacts.find(contact => contact.number === number)) {
+      alert(`this number already exists`);
+      return false;
+    }
+
     dispatch(addContact(name, number));
     return true;
   };
