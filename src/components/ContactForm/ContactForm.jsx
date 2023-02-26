@@ -15,7 +15,12 @@ const ContactForm = () => {
     const number = form.elements.number.value;
 
     form.reset();
-    
+
+    if (!name || !number) {
+      alert('Please fill in all the fields!');
+      return false;
+    }
+
     if (contacts && contacts.find(contact => contact.name === name)) {
       alert(`${name} this contact already exists`);
       return false;
