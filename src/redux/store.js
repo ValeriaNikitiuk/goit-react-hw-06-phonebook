@@ -17,15 +17,16 @@ import {
 const contactsPersistConfig = {
   key: 'contacts',
   storage,
+  blacklist: ['filter'],
 }
 
 const persistedContacts = persistReducer(contactsPersistConfig, contactsReducer);
 
-const persistConfig = {
-  key: 'root',
-  storage,
-  blacklist: ['filter'] // виключаємо редуктор фільтра з persistConfig
-}
+// const persistConfig = {
+//   key: 'root',
+//   storage,
+//   blacklist: ['filter'] // виключаємо редуктор фільтра з persistConfig
+// }
 
 export const store = configureStore({
   reducer: {
