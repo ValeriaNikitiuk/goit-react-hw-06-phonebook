@@ -14,17 +14,23 @@ import {
   REGISTER,
 } from 'redux-persist';
 
-const persistConfig = {
-  key: 'root',
+const contactsPersistConfig = {
+  key: 'contacts',
   storage,
 }
 
-const persistedContacts = persistReducer(persistConfig, contactsReducer);
+const persistedContacts = persistReducer(contactsPersistConfig, contactsReducer);
+
+const persistConfig = {
+  key: 'root',
+  storage,
+  blacklist: ['filter'] // виключаємо редуктор фільтра з persistConfig
+}
 
 export const store = configureStore({
   reducer: {
-    filter: filterReducer,
     contacts: persistedContacts,
+      filter: filterReducer,
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({

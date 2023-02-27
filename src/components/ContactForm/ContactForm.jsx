@@ -1,5 +1,5 @@
-import { getContacts } from 'components/redux/selectors';
-import { addContact } from '../redux/sliceContact.js';
+import { getContacts } from 'redux/selectors';
+import { addContact } from '../../redux/sliceContact.js';
 import { useDispatch, useSelector } from 'react-redux';
 import s from './ContactForm.module.css';
 import PropTypes from 'prop-types';
